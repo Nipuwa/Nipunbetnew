@@ -1,211 +1,227 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Official kwan - Cash Agent </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>1xBet-style Demo (Static HTML)</title>
+  <meta name="description" content="Static demo of a betting site UI — demo only, no real-money features.">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    body {
-      background: linear-gradient(180deg, #001a33, #002b1f);
-      color: #fff;
-      text-align: center;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    /* HEADER SECTION */
-    .header {
-      background: linear-gradient(180deg, #0066ff, #00cc66);
-      padding: 60px 20px 90px;
-      width: 100%;
-      border-bottom: 3px solid #00ff99;
-      position: relative;
-      box-shadow: 0 2px 10px rgba(0, 255, 150, 0.3);
-    }
-
-    .profile-pic {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      border: 4px solid #00ffcc;
-      background-color: #fff;
-      object-fit: cover;
-      margin-top: 20px;
-      transition: all 0.3s ease;
-    }
-
-    .profile-pic:hover {
-      transform: scale(1.07);
-      box-shadow: 0 0 20px #00ffcc;
-    }
-
-    h1 {
-      font-size: 30px;
-      margin-top: 25px;
-      color: #ccffcc;
-      text-shadow: 0 0 8px #00ff99;
-    }
-
-    h3 {
-      color: #aee6ff;
-      font-weight: 400;
-      margin-top: 10px;
-      font-size: 17px;
-      text-shadow: 0 0 5px #00cc99;
-    }
-
-    /* BUTTONS */
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin: 30px 10px;
-    }
-
-    .buttons a {
-      text-decoration: none;
-      color: #fff;
-      background: linear-gradient(45deg, #00bfff, #00ff99);
-      padding: 14px 26px;
-      border-radius: 30px;
-      font-weight: 600;
-      font-size: 16px;
-      transition: 0.3s ease;
-      box-shadow: 0 0 10px rgba(0, 255, 150, 0.2);
-    }
-
-    .buttons a:hover {
-      background: linear-gradient(45deg, #00ffcc, #0080ff);
-      transform: scale(1.07);
-      box-shadow: 0 0 25px #00ffcc;
-    }
-
-    /* ABOUT SECTION */
-    .about {
-      max-width: 700px;
-      margin: 15px auto;
-      background: rgba(0, 40, 30, 0.6);
-      border: 1px solid #00ff99;
-      border-radius: 20px;
-      padding: 20px;
-      text-align: left;
-      box-shadow: 0 0 15px rgba(0, 255, 150, 0.2);
-    }
-
-    .about p {
-      margin-bottom: 10px;
-      line-height: 1.6;
-    }
-
-    /* BUTTON LIST SECTION */
-    .list {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin: 25px auto 40px;
-      width: 90%;
-      max-width: 350px;
-    }
-
-    .list button {
-      background: linear-gradient(45deg, #0077ff, #00cc66);
-      color: #fff;
-      border: none;
-      padding: 16px;
-      border-radius: 15px;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 17px;
-      letter-spacing: 0.5px;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 10px rgba(0, 255, 100, 0.3);
-    }
-
-    .list button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px #00ff99;
-      background: linear-gradient(45deg, #00ff99, #0099ff);
-    }
-
-    /* FOOTER */
-    footer {
-      margin-top: auto;
-      padding: 20px 10px;
-      font-size: 14px;
-      color: #aee6ff;
-      width: 100%;
-      background: linear-gradient(180deg, #001f3f, #000);
-      border-top: 2px solid #00ff99;
-      text-align: center;
-    }
-
-    footer a {
-      color: #00ffcc;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 24px;
-      }
-      h3 {
-        font-size: 14px;
-      }
-      .buttons a {
-        width: 80%;
-      }
-    }
+    :root{--bg:#060618;--card:#0f1230;--accent:#0ea5a2;--muted:#9aa0b4;--glass:rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;background:linear-gradient(180deg,#020213 0%,#08102a 100%);color:#eaf2ff}
+    .wrap{max-width:1150px;margin:28px auto;padding:18px}
+    header{display:flex;align-items:center;gap:18px}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo .mark{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#066b6a);display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav{margin-left:auto;display:flex;gap:12px;align-items:center}
+    nav button{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:var(--muted);cursor:pointer}
+    .hero{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:20px}
+    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    .matches{display:grid;gap:10px}
+    .match{display:flex;justify-content:space-between;align-items:center;padding:12px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);border-radius:10px}
+    .teams{display:flex;gap:10px;align-items:center}
+    .team{min-width:120px}
+    .odds{display:flex;gap:8px}
+    .odd{background:var(--glass);padding:8px 12px;border-radius:8px;cursor:pointer;border:1px solid rgba(255,255,255,0.04)}
+    .sidebar{display:flex;flex-direction:column;gap:12px}
+    .wallet{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:10px}
+    .betslip{padding:10px;border-radius:10px;min-height:160px}
+    .btn{background:var(--accent);border:none;padding:10px 12px;border-radius:8px;font-weight:600;color:#042;cursor:pointer}
+    .small{font-size:13px;color:var(--muted)}
+    footer{margin-top:20px;color:var(--muted);font-size:13px;text-align:center}
+    /* modal */
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6)}
+    .modal.show{display:flex}
+    .modal .panel{width:420px;background:#0b1230;padding:18px;border-radius:12px}
+    input[type=number]{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit}
+    @media(max-width:880px){.hero{grid-template-columns:1fr}.sidebar{order:2}.card{margin-bottom:12px}}
   </style>
 </head>
 <body>
-  <div class="header">
-    <img src="https://files.catbox.moe/n2xkvo.jpg" alt="Profile" class="profile-pic" />
-    <h1>Official Kwan</h1>
-    <h3>Professional Cash Agent </h3>
-  </div>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <div class="mark">1X</div>
+        <div>
+          <div style="font-weight:700">1X Demo</div>
+          <div class="small">Static HTML demo — Non-commercial / no money</div>
+        </div>
+      </div>
+      <nav>
+        <div class="small">Demo Balance: <strong id="balance">--</strong></div>
+        <button id="topupBtn">Top-up</button>
+        <button id="loginBtn">Login</button>
+      </nav>
+    </header><main class="hero">
+  <section>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+        <h3 style="margin:0">Live Matches</h3>
+        <div class="small">All odds are illustrative</div>
+      </div>
+      <div class="matches" id="matches">
+        <!-- Matches generated by JS -->
+      </div>
+    </div>
 
-  <div class="buttons">
-    <a href="https://wa.me/94726116388" target="_blank">WhatsApp 1</a>
-    <a href="tel:+94726116388">Call</a>
-    <a href="https://chat.whatsapp.com/Jcz15TcBaMH68nyWeifuQK?mode=wwt" target="_blank">WhatsApp Group</a>
-    <a href="https://whatsapp.com/channel/0029Vb6hl5tH5JLyIRqdUB0f" target="_blank">Proof</a>
-  </div>
+    <div class="card" style="margin-top:12px">
+      <h4 style="margin:0 0 8px 0">In-play / Info</h4>
+      <div class="small">This is a static demo. Bets placed here only update a local demo balance stored in your browser (localStorage).</div>
+    </div>
+  </section>
 
-  <div class="about">
-    <p>💠 අප විසින් සිදු කරන Deposit , withdrawal වැනි සෑම වැඩකදීම 100% ගැරන්ට් කරනු ඇත</p>
-    <p>🏆 1XBET | 888 | Melbet | DB Bet</p>
-    <p>⭐ Cash Agent ⭐</p>
-    <p>✔ Deposit from 500/= <br>
-       ✔ Withdrawal from 1000/= No Extra Fees <br>
-       ✔ 24/7 Service</p>
-    <p>✅ Free Deposit ✅ Free Signal ✅ Money Management Sessions ✅ Live Gameplay Screenshots</p>
-  </div>
+  <aside class="sidebar">
+    <div class="card wallet">
+      <div>
+        <div class="small">Wallet</div>
+        <div style="font-weight:700;font-size:18px" id="walletAmt">--</div>
+      </div>
+      <button class="btn" id="withdrawBtn">Withdraw</button>
+    </div>
 
-  <div class="list">
-    <button onclick="window.location.href='ban.html'">🏦 Available Banks</button>
-    <button onclick="window.location.href='https://whatsapp.com/channel/0029Vb6hl5tH5JLyIRqdUB0f'">💸 Withdraw Details</button>
-    <button onclick="window.location.href='https://chat.whatsapp.com/Jcz15TcBaMH68nyWeifuQK?mode=wwt'">📶 Free Signal</button>
-    <button onclick="window.location.href='promo.html'">🎁 Promo Codes & Links</button>
-  </div>
+    <div class="card betslip">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <strong>Betslip</strong>
+        <div class="small" id="betsCount">0 selections</div>
+      </div>
+      <div id="betsList" style="display:flex;flex-direction:column;gap:8px"></div>
+      <div style="margin-top:10px;display:flex;gap:8px">
+        <input id="stakeInput" type="number" placeholder="Stake (demo)" min="1">
+        <button class="btn" id="placeBetBtn">Place Bet</button>
+      </div>
+    </div>
 
-  <footer>
-    © 2025 Official Chalah. All Rights Reserved.<br />
-    Developed By <a href="Chalah" target="_blank">Chalah</a>
-  </footer>
-</body>
+    <div class="card small">
+      <div style="font-weight:700">Important</div>
+      <div class="small">This repository/demo uses only HTML/JS/CSS and cannot accept or process real money. To go live with payments and compliance you must implement backend services, payment processors, and obtain appropriate gambling licenses.</div>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  Static demo — deploy it to GitHub Pages by adding this file as <code>index.html</code> to a public repo.
+</footer>
+
+  </div>  <!-- simple modal for topup/login -->  <div class="modal" id="modal">
+    <div class="panel">
+      <h4 id="modalTitle">Top-up Demo Balance</h4>
+      <div style="margin:8px 0" class="small">Enter amount to add to your local demo balance (browser only).</div>
+      <input id="modalAmount" type="number" min="1" placeholder="Amount">
+      <div style="display:flex;gap:8px;margin-top:12px">
+        <button class="btn" id="modalOk">OK</button>
+        <button id="modalCancel">Cancel</button>
+      </div>
+    </div>
+  </div>  <script>
+    // Demo data: illustrative matches & odds
+    const demoMatches = [
+      {id:1, teamA:'Manchester Utd', teamB:'Chelsea', odds:[2.1,3.2,3.6]},
+      {id:2, teamA:'Real Madrid', teamB:'Barcelona', odds:[2.5,3.0,2.9]},
+      {id:3, teamA:'Lakers', teamB:'Celtics', odds:[1.9,4.2,3.8]},
+      {id:4, teamA:'India', teamB:'Australia', odds:[2.3,3.3,3.1]},
+    ];
+
+    // state
+    let balance = 1000; // default demo
+    const selections = []; // {matchId, label, odd}
+
+    function $(id){return document.getElementById(id)}
+
+    // persist demo balance in localStorage
+    function loadState(){
+      const b = localStorage.getItem('demo_balance');
+      if(b!==null) balance = Number(b);
+      const s = localStorage.getItem('demo_selections');
+      if(s) Object.assign(selections, JSON.parse(s));
+    }
+    function saveState(){
+      localStorage.setItem('demo_balance', String(balance));
+      localStorage.setItem('demo_selections', JSON.stringify(selections));
+    }
+
+    function renderBalance(){
+      $('balance').textContent = '$' + balance.toFixed(2);
+      $('walletAmt').textContent = '$' + balance.toFixed(2);
+    }
+
+    function renderMatches(){
+      const container = $('matches'); container.innerHTML='';
+      demoMatches.forEach(m=>{
+        const el = document.createElement('div'); el.className='match';
+        el.innerHTML = `
+          <div class="teams">
+            <div class="team"><strong>${m.teamA}</strong><div class="small">vs ${m.teamB}</div></div>
+          </div>
+          <div class="odds">
+            <div class="odd" data-mid="${m.id}" data-odd="${m.odds[0]}">${m.odds[0].toFixed(2)}</div>
+            <div class="odd" data-mid="${m.id}" data-odd="${m.odds[1]}">${m.odds[1].toFixed(2)}</div>
+            <div class="odd" data-mid="${m.id}" data-odd="${m.odds[2]}">${m.odds[2].toFixed(2)}</div>
+          </div>
+        `;
+        container.appendChild(el);
+      });
+
+      // attach click handlers
+      document.querySelectorAll('.odd').forEach(node=>{
+        node.addEventListener('click', ()=>{
+          const mid = Number(node.dataset.mid); const odd = Number(node.dataset.odd);
+          const match = demoMatches.find(x=>x.id===mid);
+          const label = `${match.teamA} vs ${match.teamB} @ ${odd.toFixed(2)}`;
+          // add to selections
+          selections.push({matchId:mid,label,odd}); saveState(); renderBets();
+        });
+      });
+    }
+
+    function renderBets(){
+      $('betsList').innerHTML='';
+      selections.forEach((s,i)=>{
+        const d = document.createElement('div'); d.style.display='flex'; d.style.justifyContent='space-between'; d.style.alignItems='center';
+        d.innerHTML = `<div style="font-size:14px">${s.label}</div><div style="display:flex;gap:8px"><div class="small">x ${s.odd.toFixed(2)}</div><button data-i="${i}" style="padding:6px;border-radius:6px;background:transparent;border:1px solid rgba(255,255,255,0.05);cursor:pointer">Remove</button></div>`;
+        $('betsList').appendChild(d);
+      });
+      $('betsCount').textContent = selections.length + ' selections';
+
+      // remove handlers
+      document.querySelectorAll('#betsList button').forEach(b=>b.addEventListener('click', ()=>{
+        const idx = Number(b.dataset.i); selections.splice(idx,1); saveState(); renderBets();
+      }));
+    }
+
+    // place bet: stake multiplied by product of odds (accumulator)
+    function placeBet(){
+      const stake = Number($('stakeInput').value);
+      if(!stake || stake<=0){alert('Enter a stake (demo)'); return;}
+      if(selections.length===0){alert('Add selections to your betslip'); return;}
+      const totalOdd = selections.reduce((acc,s)=>acc * s.odd,1);
+      const payout = stake * totalOdd;
+      if(stake>balance){alert('Insufficient demo balance'); return;}
+      // settle immediately for demo
+      balance = balance - stake + payout; saveState();
+      alert('Bet settled (demo) — Payout: $'+payout.toFixed(2));
+      selections.length = 0; renderBets(); renderBalance();
+    }
+
+    // modal helpers
+    function showModal(title, okHandler){
+      $('modalTitle').textContent = title; $('modal').classList.add('show');
+      $('modalOk').onclick = ()=>{ const v = Number($('modalAmount').value); if(!v||v<=0){alert('Enter an amount');return;} okHandler(v); $('modal').classList.remove('show'); $('modalAmount').value=''; };
+      $('modalCancel').onclick = ()=>{$('modal').classList.remove('show'); $('modalAmount').value='';};
+    }
+
+    // wire buttons
+    window.addEventListener('load', ()=>{
+      loadState(); renderBalance(); renderMatches(); renderBets();
+      $('placeBetBtn').addEventListener('click', placeBet);
+      $('topupBtn').addEventListener('click', ()=>{
+        showModal('Top-up Demo Balance', amount=>{ balance += Number(amount); saveState(); renderBalance(); });
+      });
+      $('withdrawBtn').addEventListener('click', ()=>{
+        const w = prompt('Withdraw demo amount to local (this is only a demo, enter amount to withdraw)');
+        const num = Number(w);
+        if(isNaN(num)||num<=0){return;} if(num>balance){alert('Not enough demo balance');return;} balance -= num; saveState(); renderBalance(); alert('Demo withdraw processed');
+      });
+      $('loginBtn').addEventListener('click', ()=>{alert('This demo has no real authentication. Implement backend + OAuth/JWT for production.');});
+    });
+  </script></body>
 </html>
